@@ -10,8 +10,10 @@ Rails.application.configure do
   config.eager_load = false
   
   
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => "example.com" }
+ config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = 'https://63d91c7d6f634023a11288fd4524ac15.vfs.cloud9.us-east-2.amazonaws.com/' # Don't use this literally; use your local dev host instead
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Show full error reports.
   config.consider_all_requests_local = true
 
